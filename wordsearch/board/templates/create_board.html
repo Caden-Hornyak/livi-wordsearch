@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Creation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
+
 <body>
+    <h1>I like pizza!</h1>
+    <img src="static/images/A-letter.png" onclick="CubePress();" alt="'A' character">
     <ul>
         {% for item in board %}
             <li>{{ item }}</li>
