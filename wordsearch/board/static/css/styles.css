@@ -1,7 +1,23 @@
-h1 {
-    color:blue;
-  }
-  
 body {
-    color: blue;
+    color: red;
+}
+#board {
+  width: 400px;
+  height: 400px;
+  border: 2px solid red;
+  margin: auto;
+  display: flex;
+}
+.board_letters {
+  flex: 1;
+  padding: 0px;
+  float: left;
+  padding: 1px;
+  width: 100px;
+  height: 100px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3em;
+  border: 2px solid black;
+  border-radius: 5px;
 }

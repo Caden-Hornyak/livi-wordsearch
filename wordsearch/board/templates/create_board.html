@@ -9,12 +9,19 @@
 </head>
 
 <body>
-    <h1>I like pizza!</h1>
-    <img src="static/images/A-letter.png" onclick="CubePress();" alt="'A' character">
-    <ul>
-        {% for item in board %}
-            <li>{{ item }}</li>
+    <div id="board">
+        {% for row in board %}
+            {% for char in row %}
+                <div class="board_letters" onclick="letter_press('{{char}}')">
+                    <label>{{char}}</label>
+                </div>
+            {% endfor %}
         {% endfor %}
-    </ul>
+    </div>
+    <label id="current_word">Word: </label>
+    <br>
+    <button id="submit_word" onclick="submit_word()">Enter</button>
+
+    <script src="../static/js/test.js"></script>
 </body>
 </html>
