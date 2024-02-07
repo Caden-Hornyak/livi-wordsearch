@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div id="wordDefinitions" data-words='{{ word_dic | safe }}'></div>
     <div id="board">
         {% for row in board %}
             {% for char in row %}
@@ -18,10 +19,14 @@
             {% endfor %}
         {% endfor %}
     </div>
-    <label id="current_word">Word: </label>
+    <label>Word: </label>
+    <label id="current_word"></label>
     <br>
     <button id="submit_word" onclick="submit_word()">Enter</button>
-
-    <script src="../static/js/test.js"></script>
+    <br>
+    <label id="score">0</label>
+    <br>
+    <label id="wrong_word"></label>
+    <script src="../static/js/board_funcs.js"></script>
 </body>
 </html>
