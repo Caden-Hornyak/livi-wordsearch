@@ -5,31 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board Creation</title>
     {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/ws_fav.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
     <div id="wordDefinitions" data-words='{{ word_dic | safe }}'></div>
-    <div id="board">
-        {% for row in board %}
-            {% for char in row %}
-                <div draggable="false" class="board_letters" id="{{char}}{{ forloop.counter }}{{ forloop.parentloop.counter }}">
-                    <label>{{char}}</label>
-                </div>
+    <div id="game">
+        <div id="board">
+            {% for row in board %}
+                {% for char in row %}
+                    <div draggable="false" class="board_letters" id="{{char}}{{ forloop.counter }}{{ forloop.parentloop.counter }}">
+                        <label>{{char}}</label>
+                    </div>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-    </div>
-
-    <div id="game_info">
-        <label></label>
-        <label id="current_word"></label>
-        <br>
+        </div>
+        <label id="score_adjust"></label>
         <label id="score">0</label>
-        <br>
-        <label id="wrong_word"></label>
-
+        <div class="box" id="currword_box">
+            <label id="current_word"></label>
+        </div>
     </div>
+    <br>
+    
+    
+    
 
     <script src="../static/js/board_funcs.js"></script>
+    <script src="../static/js/jQuery.js"></script>
 </body>
 </html>
