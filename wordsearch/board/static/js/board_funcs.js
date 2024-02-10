@@ -131,7 +131,10 @@ function isAlpha(str) {
 document.addEventListener('keydown', function(event) {
     if (event.key == 'Enter') {
         handleLetterMouseUp();
-    } else if (event.key.length == 1 && isAlpha(event.key)) {
+    } else if (event.key == 'Backspace') {
+        current_word.textContent = current_word.textContent.slice(0, -1);
+    }
+    else if (event.key.length == 1 && isAlpha(event.key)) {
         current_word.textContent += event.key;
     }
 });

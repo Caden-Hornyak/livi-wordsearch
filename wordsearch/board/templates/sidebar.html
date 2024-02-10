@@ -1,0 +1,54 @@
+<div class="sidebar">
+    <div class="top">
+        <div class="logo">
+            <i class="bx bxl-codepen"></i>
+            <span>Livi's Word Search</span>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+    </div>
+    <div class="user">
+        <!-- <img src="user-img.jpg" alt="Your profile picture" class="user-img"> -->
+        <div>
+            <p class="bold">Caden H.</p>
+            <p>Admin</p>
+        </div>
+    </div>
+        
+    <ul>
+        <li>
+            <a href="{% url 'create_board' %}">
+                <i class="bx bxs-grid-alt"></i>
+                <span class="nav-item">Word Search</span>
+            </a>
+        </li>
+        
+        {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'signout' %}">
+                <i class="bx bxs-grid-alt"></i>
+                <span class="nav-item">Logout</span>
+            </a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{% url 'signin' %}">
+                <i class="bx bxs-grid-alt"></i>
+                <span class="nav-item">Login</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'signup' %}">
+                <i class="bx bxs-grid-alt"></i>
+                <span class="nav-item">Sign up</span>
+            </a>
+            
+        </li>
+        {% endif %}
+        <li>
+            <a href="{% url 'create_board' %}">
+                <i class="bx bxs-grid-alt"></i>
+                <span class="nav-item">Word Search</span>
+            </a>
+        </li>
+    </ul>
+</div>

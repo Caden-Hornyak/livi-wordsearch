@@ -7,11 +7,15 @@
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'images/ws_fav.ico' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/sidebar.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
     <div id="wordDefinitions" data-words='{{ word_dic | safe }}'></div>
+
+    <div id="sidebar"></div>
+    
     <div id="game">
         <div id="board">
             {% for row in board %}
@@ -31,9 +35,9 @@
     <br>
     
     
-    
 
-    <script src="../static/js/board_funcs.js"></script>
     <script src="../static/js/jQuery.js"></script>
+    <script src="../static/js/board_funcs.js"></script>
+    <script src="../static/js/sidebar.js"></script>
 </body>
 </html>

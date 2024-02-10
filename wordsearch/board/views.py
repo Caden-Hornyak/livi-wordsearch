@@ -16,3 +16,6 @@ def create_board(request):
     word_definitions_json = json.dumps(board_obj.word_dic)
 
     return render(request, "create_board.html", {'board': board, 'word_dic': word_definitions_json})
+
+def sidebar(request):
+    return render(request, "sidebar.html")

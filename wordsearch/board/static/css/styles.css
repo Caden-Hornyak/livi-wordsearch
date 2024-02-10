@@ -68,6 +68,6 @@ body {
   height: 500px;
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: calc(50vw + 150px - 375px);
+  transform: translate(0%, -50%);
 }
